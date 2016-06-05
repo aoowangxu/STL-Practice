@@ -1,0 +1,63 @@
+/*************************************************************************
+	> File Name: 3.12.cpp
+	> Author: Xu Wang
+	> Mail: aoo_wangxu@163.com 
+	> Created Time: Tue 24 May 2016 04:37:25 AM EDT
+ ************************************************************************/
+
+#include<iostream>
+#include<list>
+#include<algorithm>
+#include<string>
+
+using namespace std;
+
+template <class T>
+void print(const T&ele)
+{
+    cout << " " << ele << " ; " << endl;
+}
+
+
+
+void print_d(double &ele)
+{
+    cout.width(5);
+    cout.precision(1);
+    cout << std::fixed << ele << ", ";
+}
+
+void print_i(int &ele)
+{
+    cout << ele << ", ";
+}
+
+int main()
+{
+    list<string> mylist_string;
+    list<double> mylist_double (6);
+
+    mylist_string.push_front(string("1. tack"));
+    mylist_string.push_front("2. weer");
+    mylist_string.push_front("3. mike");
+
+   /* mylist_double.push_back(10.0);
+    mylist_double.push_back(20.0);
+    mylist_double.push_back(30.0);
+    mylist_double.push_back(40.0);
+    mylist_double.push_back(50.0);
+
+    list<int>mylist_int (6, 0);
+    list<double>mylist_double2 (6 , 0.0);
+    list<int> elselist(mylist_int);*/
+    list<string>::iterator iter_string;
+    string temp;
+    for (iter_string = mylist_string.begin(); iter_string != mylist_string.end(); ++iter_string);
+    {
+        temp = *iter_string;
+        print(temp);
+    }
+
+    return 0;
+}
+
